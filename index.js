@@ -81,12 +81,13 @@ module.exports = function (options) {
    * @param {*} callback  The callback
    */
   var processFiles = function (file, encoding, callback) {
-    // Add file to final array
-    files.push(file);
+    
 
     // Check if file has changed
     if (hasFileChangedBySha1Hash(basePath, file)) {
       hasChanged = true;
+      // Add file to final array
+      files.push(file);
     }
 
     callback();
